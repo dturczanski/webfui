@@ -1,7 +1,7 @@
 (ns webfui.utilities)
 
 (defn body []
-  (.-body js/document))
+  (.getElementById js/document "content"))
 
 (defn get-attribute [element key]
   (get-in element [1 key]))

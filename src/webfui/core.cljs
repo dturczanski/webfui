@@ -4,9 +4,8 @@
         [cljs.reader :only [read-string]]))
 
 ;; This file contains the core engine for webfui. You usually don't want to load this file directly, instead load webfui.dom or webfui.framework.
-
 (defn body []
-  (.-body js/document))
+  (.getElementById js/document "content"))
 
 (defn select-path-dom [node path]
   (if-let [[cur & more] (seq path)]

@@ -4,7 +4,7 @@
 ;; This file is for DOM manipulation functions used by both the core of webfui as well as plugins.
 
 (defn path-dom [node]
-  (drop 3
+  (drop 4
         (reverse ((fn f [node]
                     (lazy-seq (when node
                                 (cons (dec (count (take-while identity (iterate #(.-previousSibling %) node)))) (f (.-parentNode node))))))
